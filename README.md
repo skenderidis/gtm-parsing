@@ -52,7 +52,7 @@ The client (user or app) will make a request to the endpoint `https://gtm-ip-add
 
 The Bash scripts will copy the existing `bigip_gtm.conf` file to a temporary file called `temp.conf` and then execute the Python script to parse the `temp.conf` files and provide the json output. 
 
-servers.sh
+Bash script `servers.sh` is shown below
 
 ```shell
 #!/bin/bash
@@ -60,6 +60,7 @@ cp /config/bigip_gtm.conf /config/temp.conf
 python /config/server.py
 
 ```
+All scripts for this option can be found <a href="https://github.com/skenderidis/gtm-parsing/tree/main/Option%20B"> here </a>
 
 ### Benefits
 (+) Faster than Option A, as it doesn't require downloading the file 
