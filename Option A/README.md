@@ -34,7 +34,7 @@ password="Test123"                ####  <=========   Update these values with th
 ```
 
 #### Step3
-Connect to the correct endpoint:
+Connect to the endpoints:
 * For Servers: `https://php-ip-address/endpoint.php?retrieve=server`
 * For WideIPs: `https://php-ip-address/endpoint.php?retrieve=wideip`
 * For Pools: `https://php-ip-address/endpoint.php?retrieve=pool`
