@@ -66,7 +66,7 @@ python /config/server.py
 
 (-) Since the Python script is executed on the BIGIP it consumes resources from the system. So depending on the # of calls this needs to be considered.
 
-(-) It is important to validate the Python script will not go into a loop (after a change) as it could have an impact on the control plane CPU of the BIGP  
+(-) It is important to validate that the Python script will not go into a loop (after a change) as it could have an impact on the control plane CPU of the BIGP  
 
 
 ## General Recommendations
