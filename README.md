@@ -28,7 +28,7 @@ Once the file is stored, Python will parse the file and provide the Servers/Pool
 ### Benefits
 * (+) With this option there is no additional process or script that is deployed in BIGIP that will consume CPU resources.
 * (+) Even if the Python script fails to parse there is little concern as it takes place outside BIGIP.
-*(-) It will take an additional 1-2 seconds to download the file from BIGIP.
+* (-) It will take an additional 1-2 seconds to download the file from BIGIP.
 
 
 You can find both scripts <a href="https://github.com/skenderidis/gtm-parsing/tree/main/Option%20A"> here </a>
