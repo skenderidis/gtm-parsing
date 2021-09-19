@@ -26,9 +26,11 @@ The PHP script will call the Python script (get_file.py) that will in turn conne
 Once the file is stored, Python will parse the file and provide the Servers/Pools/WideIPs results in json format. 
 
 ### Benefits
-* (+) With this option there is no additional process or script that is deployed in BIGIP that will consume CPU resources.
-* (+) Even if the Python script fails to parse there is little concern as it takes place outside BIGIP.
-* (-) It will take an additional 1-2 seconds to download the file from BIGIP.
+(+) With this option there is no additional process or script that is deployed in BIGIP that will consume CPU resources.
+
+(+) Even if the Python script fails to parse there is little concern as it takes place outside BIGIP.
+
+(-) It will take an additional 1-2 seconds to download the file from BIGIP.
 
 
 You can find both scripts <a href="https://github.com/skenderidis/gtm-parsing/tree/main/Option%20A"> here </a>
@@ -60,9 +62,11 @@ python /config/server.py
 ```
 
 ### Benefits
-* (+) Faster than Option A, as it doesn't require downloading the file 
-* (-) Since the Python script is executed on the BIGIP it consumes resources from the system. So depending on the # of calls this needs to be considered.
-* (-) It is important to validate the Python script will not go into a loop (after a change) as it could have an impact on the control plane CPU of the BIGP  
+(+) Faster than Option A, as it doesn't require downloading the file 
+
+(-) Since the Python script is executed on the BIGIP it consumes resources from the system. So depending on the # of calls this needs to be considered.
+
+(-) It is important to validate the Python script will not go into a loop (after a change) as it could have an impact on the control plane CPU of the BIGP  
 
 
 ## General Recommendations
