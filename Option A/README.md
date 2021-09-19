@@ -1,5 +1,5 @@
 
-# Option A - Downloading bigip_gtm.conf snd parsing it locally
+# Option A - Downloading bigip_gtm.conf and parsing it locally
 
 ## Pre-requisites
 
@@ -13,7 +13,7 @@
 Put both files on the same directory of the PHP server. 
 
 #### Step2
-Modify the Python script to include the `IP address / Username / Password` of the BIGIP device you want to connect to
+Modify the Python script `get_file.py` to include  `IP address, Username and Password` of the BIGIP device you want to connect to
 
 ```shell
 import re
@@ -34,9 +34,9 @@ password="Test123"                ####  <=========   Update these values with th
 ```
 
 #### Step3
-Connect to the endpoint
-For Servers: `https://php-ip-address/endpoint.php?retrieve=server`
-For WideIPs: `https://php-ip-address/endpoint.php?retrieve=wideip`
-For Pools: `https://php-ip-address/endpoint.php?retrieve=pool`
+Connect to the correct endpoint:
+* For Servers: `https://php-ip-address/endpoint.php?retrieve=server`
+* For WideIPs: `https://php-ip-address/endpoint.php?retrieve=wideip`
+* For Pools: `https://php-ip-address/endpoint.php?retrieve=pool`
 
 
