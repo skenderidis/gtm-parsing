@@ -11,16 +11,27 @@ In this option we are using the server used for the automation pipeline to conne
 
 In the example below we are using a PHP server for the HTTP endpoint and Python for downloading the configuration file from BigIP and parsing the data locally. 
 
-How it works. 
+### How it works. 
 
-The client (user or app) will make a request to the PHP endpoint specifying to provide the records either for servers/pools/wideips `https://<IP>/endpoint.php?retrieve=pool`. PHP will get the variable `retrieve` that can have 3 values.
+The client (user or app) will make a request to the PHP endpoint specifying to provide the records either for servers/pools/wideips `https://<IP>/endpoint.php?retrieve=pool`. PHP script (endpoint.php) will get the variable `retrieve` that can have 3 values.
 
 
 | retrieve values    |
 |--------------------|
-| server	 |
+| server	       |
 | pool	         |
 | wideip      |
+
+The PHP script will call the Python script (get_file.py) that will in turn connect to bigip, download the `bigip_gtm.conf` file with scp and save it as `config.conf`
+Once the file is stored, Python will parse the file and provide the Servers/Pools/WideIPs results in json format. 
+
+### Benefits.
++ With this option there is no additional process or script that is deployed in BIGIP that will consume CPU resources. 
++ Even if the Python script fails to parse there is little concern as it takes place outside BIGIP.
+- It will take an additional 1-2 seconds to download the file from BIGIP.
+
+
+You can find both scripts <a href="https://github.com/skenderidis/gtm-parsing/tree/main/Option%20A"> here </a>
 
 
 ## Option B - Parsing bigip_gtm.conf on GTM and getting results
