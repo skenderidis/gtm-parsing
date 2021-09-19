@@ -1,8 +1,8 @@
 
 # Parsing bigip_gtm.conf
 
-in certain automation scenarios, when you have several thousands of GTM server objects (Servers, WideIPs, Pools) it might take longer than expected to get all the objects through REST API. 
-This repo provides an alternative way to get similar details but through the bigip_gtm.conf file. 
+In certain automation scenarios, when you have several thousands of GTM server objects (Servers, WideIPs, Pools) it might take longer than expected to get all the objects through REST API. 
+This repo provides an alternative way to get similar details by parsing the bigip_gtm.conf file. 
 
 
 ## Option A - Downloading bigip_gtm.conf snd parsing it locally
