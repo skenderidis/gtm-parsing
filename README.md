@@ -22,7 +22,7 @@ The client (user or app) will make a request to the PHP endpoint specifying to p
 | pool	         |
 | wideip      |
 
-The PHP script will call the Python script (get_file.py) that will in turn connect to bigip, download the `bigip_gtm.conf` file with scp and save it as `config.conf`
+The PHP script will call the Python script (get_file.py) that will in turn connect to bigip, download the `bigip_gtm.conf` file (with the use of scp), and save it as `config.conf`
 Once the file is stored, Python will parse the file and provide the Servers/Pools/WideIPs results in json format. 
 
 ### Benefits
