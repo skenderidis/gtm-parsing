@@ -1,29 +1,70 @@
 
-# F5 CIS Azure Lab (Work in progress)
+# Parsing bigip_gtm.conf
 
-Create a Lab environment in Azure to test several CIS use-cases
-
-
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Pre-requisites](#pre-requisites)
-- [Installation](#installation)
-- [Use-cases](#use-cases)
-- [Variables](#variables)
+in certain automation scenarios, when you have several thousands of GTM server objects (Servers, WideIPs, Pools) it might take longer than expected to get all the objects through REST API. 
+This repo provides an alternative way to get similar details but through the bigip_gtm.conf file. 
 
 
-## Introduction
+## Option A - donwloading the bigip_gtm.conf file and parsing it locally
 
-The purpose of this repository is to create a Lab environment on Azure that we will be able to demo [CIS use-cases](#use-cases).<br>
+In this option we are using the server used for the automation pipeline to connect via scp (Secure Copy Protocol) that will connect to F5 and download the BigIP GTM configuration file. Once the file is downloaded, it will run a python script against it so that extracts the right information. 
 
-We will use Terraform to create the following:
-* F5 VPC
-* 1xBIGIP (25Mbps PAYG - Best)
-* K8s VPC
-* 3x Ubuntu 18.04.2 (1xMaster and 2xNodes)
-* VPC Peering, Security Groups, Public IPs, etc.
-* Ansible Dynamic inventories
+In the example below we are using a PHP server for the HTTP endpoint and Python for downloading the confgiration file from BigIP and parsing the data. But the same can be achieve with multiple technologies. 
+
+PHP Script
+```shell
+<?php 
+    #### Retrieve is either server/pool/wideip so that the python script parses the right information ######
+    $retrieve = $_GET['retrieve'];
+
+    header('Content-Type: application/json');
+
+    exec("python get_file.py $retrieve  2>&1");
+
+    if ($retrieve == "server" )
+    {
+        $result = file_get_contents("server.json");
+    }
+    if ($retrieve == "pool" )
+    {
+        $result = file_get_contents("pool.json");
+    }
+    if ($retrieve == "wideip" )
+    {
+        $result = file_get_contents("wideip.json");
+    }
+    print($result);
+?>
+```
+
+Python Script
+```shell
+<?php 
+    #### Retrieve is either server/pool/wideip so that the python script parses the right information ######
+    $retrieve = $_GET['retrieve'];
+
+    header('Content-Type: application/json');
+
+    exec("python get_file.py $retrieve  2>&1");
+
+    if ($retrieve == "server" )
+    {
+        $result = file_get_contents("server.json");
+    }
+    if ($retrieve == "pool" )
+    {
+        $result = file_get_contents("pool.json");
+    }
+    if ($retrieve == "wideip" )
+    {
+        $result = file_get_contents("wideip.json");
+    }
+    print($result);
+?>
+```
+
+
+
 
 <img src="https://raw.githubusercontent.com/skenderidis/f5-cis-lab/main/images/cis-lab-1.png">
 
