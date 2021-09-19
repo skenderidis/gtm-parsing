@@ -71,6 +71,6 @@ All scripts for this option as well as instructions on how to install them  can 
 
 
 ## General Recommendations
-* It is highly recommended to have a "shadow" GTM that will be used only for REST API purposes. 
+* It is best practice to have a "shadow" GTM that will be used only for REST API purposes. 
 * Before changes please perform a test on a lab environment.
 * Validate the Python scripts as per your requirements. The provided scripts are for testing purposes.
