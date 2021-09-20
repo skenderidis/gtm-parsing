@@ -31,17 +31,20 @@ The JSON payload that you need is the value of the "commandResult" key.
 
 #### Step3 (Optional)
 The PHP script `remote.php` can be used to filter the payload of the F5 endpoint and return only the json value of the response ("commandResult" value).
-To configure it you need to 
+Put the PHP on your PHP server. Connect to the endpoints:
+* For Servers: `https://php-ip-address/remote.php?retrieve=server`
+* For WideIPs: `https://php-ip-address/remote.php?retrieve=wideip`
+* For Pools: `https://php-ip-address/remote.php?retrieve=pool`
 
-
+Modify the PHP script `remote.php` with the correct  `IP address, Username and Password` of the BIGIP device you want to connect to
 
 ```shell
 
 <?php 
 
-$username = "user";
-$password = "pass";
-$bigip_ip = "192.168.5.91";
+$username = "user";             ####  <=========   Update these values with the "Username" 
+$password = "pass";             ####  <=========   Update these values with the "Password" 
+$bigip_ip = "192.168.5.91";     ####  <=========   Update these values with the IP Address 
 $retrieve = $_GET['retrieve'];
 
 
