@@ -10,10 +10,10 @@
 ## How to install it
 
 #### Step1
-Put both files on the same directory of the PHP server. 
+Put both files ` endpoint.php, get_file.py `  on the same directory on a PHP server. 
 
 #### Step2
-Modify the Python script `get_file.py` to include  `IP address, Username and Password` of the BIGIP device you want to connect to
+Modify the Python script `get_file.py` with the correct  `IP address, Username and Password` of the BIGIP device you want to connect to
 
 ```shell
 import re
