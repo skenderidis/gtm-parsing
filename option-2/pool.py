@@ -1,7 +1,5 @@
 import re
 import json
-from datetime import datetime
-
 
 def pool(file, next_line):
     pool_brackets = 0
@@ -32,7 +30,7 @@ def pool(file, next_line):
     return(pool)
 
 
-file = open("test.txt",'r')
+file = open("temp.conf",'r')
 output = []
 while True:
     next_line = file.readline()

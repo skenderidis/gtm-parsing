@@ -1,7 +1,5 @@
 import re
 import json
-from datetime import datetime
-
 
 def server(file, next_line):
     server_brackets = 0
@@ -42,7 +40,7 @@ def server(file, next_line):
 
 
 
-file = open("test.txt",'r')
+file = open("temp.conf",'r')
 output = []
 while True:
     next_line = file.readline()

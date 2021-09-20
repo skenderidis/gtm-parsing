@@ -33,7 +33,7 @@ Once the file is stored, Python will parse the file and provide the Servers/Pool
 (-) It will take an additional 1-2 seconds to download the file from BIGIP.
 
 
-You can find both scripts as well as instructions on how to install them <a href="https://github.com/skenderidis/gtm-parsing/tree/main/Option%20A"> here </a>
+You can find both scripts as well as instructions on how to install them <a href="https://github.com/skenderidis/gtm-parsing/tree/main/option-1"> here </a>
 
 
 ## Option B - Parsing bigip_gtm.conf on GTM and getting results
@@ -60,7 +60,7 @@ cp /config/bigip_gtm.conf /config/temp.conf
 python /config/server.py
 
 ```
-All scripts for this option as well as instructions on how to install them  can be found <a href="https://github.com/skenderidis/gtm-parsing/tree/main/Option%20B"> here </a>
+All scripts for this option as well as instructions on how to install them  can be found <a href="https://github.com/skenderidis/gtm-parsing/tree/main/option-2"> here </a>
 
 ### Benefits
 (+) Faster than Option A, as it doesn't require downloading the file 
