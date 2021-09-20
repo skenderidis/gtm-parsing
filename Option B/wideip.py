@@ -1,7 +1,5 @@
 import re
 import json
-from datetime import datetime
-
 
 def wideip(file, next_line):
     wideip_brackets = 0
@@ -31,8 +29,7 @@ def wideip(file, next_line):
 
     return(wideip)
 
-
-file = open("test.txt",'r')
+file = open("temp.conf",'r')
 output = []
 while True:
     next_line = file.readline()
