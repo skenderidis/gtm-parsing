@@ -38,8 +38,11 @@ def server(file, next_line):
     return(server)
 
 
+<<<<<<< HEAD:option-2/server.py
 
 
+=======
+>>>>>>> f62dd7de68a0e3723bc6c1e5edc4497a42bec6b8:Option B/server.py
 file = open("temp.conf",'r')
 output = []
 while True:
